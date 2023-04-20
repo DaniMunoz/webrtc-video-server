@@ -36,7 +36,7 @@ const io = require('socket.io')(server, {
 
 app.use(express.json());
 
-app.get('/message', cors(corsOptions), (req, res) => {
+app.get('/message', (req, res) => {
     res.json({ message: "Hello from server!" });
 });
 
