@@ -14,13 +14,13 @@ app.use(express.static('public'))
 
 app.use(cors());
 var corsOptions = {
-    origin: ['http://localhost:3000', 'http://localhost:8000', 'https://webrtc-video-client.vercel.app/'],
+    origin: ['http://localhost:3000', 'http://localhost:8000', 'https://webrtc-video-client.vercel.app'],
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
 
 const io = require('socket.io')(server, {
     cors: {
-        origin: ['http://localhost:3000', 'http://localhost:8000', 'https://webrtc-video-client.vercel.app/'],
+        origin: ['http://localhost:3000', 'http://localhost:8000', 'https://webrtc-video-client.vercel.app'],
         /*
         handlePreflightRequest: (req, res) => {
             res.writeHead(200, {
