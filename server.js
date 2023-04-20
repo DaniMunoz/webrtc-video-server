@@ -13,14 +13,16 @@ const { v4: uuidV4} = require('uuid')
 app.use(express.static('public'))
 
 app.use(cors());
+//origin: ['http://localhost:3000', 'http://localhost:8000', 'https://webrtc-video-client.vercel.app']
 var corsOptions = {
-    origin: ['http://localhost:3000', 'http://localhost:8000', 'https://webrtc-video-client.vercel.app'],
+    origin: 'https://webrtc-video-client.vercel.app',
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
 
+//origin: ['http://localhost:3000', 'http://localhost:8000', 'https://webrtc-video-client.vercel.app']
 const io = require('socket.io')(server, {
     cors: {
-        origin: ['http://localhost:3000', 'http://localhost:8000', 'https://webrtc-video-client.vercel.app'],
+        origin: 'https://webrtc-video-client.vercel.app',
         /*
         handlePreflightRequest: (req, res) => {
             res.writeHead(200, {
