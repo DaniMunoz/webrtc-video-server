@@ -60,6 +60,6 @@ io.on('connection', socket => {
     })
 })
 
-server.listen(8000, () => {
+server.listen(PORT, () => {
     console.log(`Server is running on port 8000.`);
 });
