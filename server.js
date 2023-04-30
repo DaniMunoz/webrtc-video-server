@@ -16,7 +16,7 @@ app.use(cors());
 //origin: 'https://webrtc-video-client.vercel.app',
 var corsOptions = {
   origin: [
-    "https://videochat-danimunoz.vercel.app/",
+    "https://videochat-danimunoz.vercel.app",
     "http://127.0.0.1:4173",
     "http://127.0.0.1:5173",
     "http://localhost:3000",
@@ -30,7 +30,7 @@ var corsOptions = {
 const io = require("socket.io")(server, {
   cors: {
     origin: [
-      "https://videochat-danimunoz.vercel.app/",
+      "https://videochat-danimunoz.vercel.app",
       "http://127.0.0.1:4173",
       "http://127.0.0.1:5173",
       "http://localhost:3000",
