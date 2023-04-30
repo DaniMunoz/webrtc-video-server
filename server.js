@@ -13,40 +13,45 @@ const { v4: uuidV4 } = require("uuid");
 app.use(express.static("public"));
 
 app.use(cors());
-//origin: 'https://webrtc-video-client.vercel.app',
-var corsOptions = {
-  origin: [
-    "https://videochat-danimunoz.vercel.app",
+/*
+origin: [
     "http://127.0.0.1:4173",
     "http://127.0.0.1:5173",
     "http://localhost:3000",
     "http://localhost:8000",
     "https://webrtc-video-client.vercel.app",
+    "https://videochat-danimunoz.vercel.app",
   ],
+*/
+var corsOptions = {
+  origin: 'https://videochat-danimunoz.vercel.app',
   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 
-//origin: 'https://webrtc-video-client.vercel.app',
-const io = require("socket.io")(server, {
-  cors: {
-    origin: [
-      "https://videochat-danimunoz.vercel.app",
+/*
+origin: [
       "http://127.0.0.1:4173",
       "http://127.0.0.1:5173",
       "http://localhost:3000",
       "http://localhost:8000",
       "https://webrtc-video-client.vercel.app",
+      "https://videochat-danimunoz.vercel.app",
     ],
-    /*
-        handlePreflightRequest: (req, res) => {
-            res.writeHead(200, {
-                "Access-Control-Allow-Origin": "*",
-                "Access-Control-Allow-Methods": "GET,POST",
-                //"Access-Control-Allow-Headers": "my-custom-header",
-                //"Access-Control-Allow-Credentials": true,
-            })
-        }
-        */
+*/
+
+/*
+  handlePreflightRequest: (req, res) => {
+      res.writeHead(200, {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET,POST",
+          //"Access-Control-Allow-Headers": "my-custom-header",
+          //"Access-Control-Allow-Credentials": true,
+      })
+  }
+*/
+const io = require("socket.io")(server, {
+  cors: {
+    origin: 'https://videochat-danimunoz.vercel.app',
   },
 });
 
