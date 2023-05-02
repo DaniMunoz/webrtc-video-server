@@ -24,7 +24,7 @@ origin: [
   ],
 */
 var corsOptions = {
-  origin: 'https://videochat-danimunoz.vercel.app',
+  origin: ['https://videochat-danimunoz.vercel.app', 'charla.vercel.app'],
   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 
@@ -51,7 +51,7 @@ origin: [
 */
 const io = require("socket.io")(server, {
   cors: {
-    origin: 'https://videochat-danimunoz.vercel.app',
+    origin: ['https://videochat-danimunoz.vercel.app', 'charla.vercel.app'],
   },
 });
 
@@ -74,6 +74,7 @@ app.get("/room/:room", cors(corsOptions), (req, res) => {
 io.on("connection", (socket) => {
   socket.on("join-room", (roomId, userId) => {
     socket.join(roomId);
+    //socket.to(roomId).broadcast.emit('user-connected', userId)
     socket.to(roomId).emit("user-connected", userId);
     socket.on("disconnect", () => {
       socket.to(roomId).emit("user-disconnected", userId);
