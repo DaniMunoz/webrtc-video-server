@@ -24,7 +24,7 @@ origin: [
   ],
 */
 var corsOptions = {
-  origin: 'charla.vercel.app',
+  origin: 'https://charla.vercel.app',
   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 
@@ -51,7 +51,7 @@ origin: [
 */
 const io = require("socket.io")(server, {
   cors: {
-    origin: 'charla.vercel.app',
+    origin: 'https://charla.vercel.app',
   },
 });
 
